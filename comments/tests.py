@@ -1,6 +1,5 @@
 from testing.testcases import TestCase
 
-
 class CommentModelTests(TestCase):
 
     def setUp(self):
@@ -11,13 +10,13 @@ class CommentModelTests(TestCase):
     def test_comment(self):
         self.assertNotEqual(self.comment.__str__(), None)
 
-        def test_like_set(self):
-            self.create_like(self.linghu, self.comment)
-            self.assertEqual(self.comment.like_set.count(), 1)
+    def test_like_set(self):
+        self.create_like(self.linghu, self.comment)
+        self.assertEqual(self.comment.like_set.count(), 1)
 
-            self.create_like(self.linghu, self.comment)
-            self.assertEqual(self.comment.like_set.count(), 1)
+        self.create_like(self.linghu, self.comment)
+        self.assertEqual(self.comment.like_set.count(), 1)
 
-            dongxie = self.create_user('dongxie')
-            self.create_like(dongxie, self.comment)
-            self.assertEqual(self.comment.like_set.count(), 2)
+        dongxie = self.create_user('dongxie')
+        self.create_like(dongxie, self.comment)
+        self.assertEqual(self.comment.like_set.count(), 2)
