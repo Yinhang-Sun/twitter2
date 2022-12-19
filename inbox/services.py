@@ -33,6 +33,6 @@ class NotificationService(object):
         notify.send(
             comment.user,
             recipient=comment.tweet.user,
-            verb='Commented your tweet',
+            verb='liked your comment',
             target=comment.tweet,
         )
