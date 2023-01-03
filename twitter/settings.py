@@ -27,7 +27,7 @@ SECRET_KEY = 'i_8$e&=cfr5bd1r(@^@gd@2y@+0@i0%ldpeke108o+pux&hsn4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.33.10', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.33.10', 'localhost', '192.168.64.4']
 
 
 # Application definition
@@ -178,12 +178,12 @@ MEDIA_ROOT = 'media/'
 # DO NOT pip install memcache or django-memcached
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
         'LOCATION': '127.0.0.1:11211',
         'TIMEOUT': 86400,
     },
     'testing': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
         'LOCATION': '127.0.0.1:11211',
         'TIMEOUT': 86400,
         'KEY_PREFIX': 'testing',
