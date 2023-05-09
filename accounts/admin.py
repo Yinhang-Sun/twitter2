@@ -3,7 +3,7 @@ from accounts.models import UserProfile
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
-# TEST
+#
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = ('user', 'nickname', 'avatar', 'created_at', 'updated_at')
